@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'kanit';
+            src: url('./Kanit/Kanit-Regular.ttf');
+        }
+        body {
+            background-color: whitesmoke;
+            font-family: 'kanit';
+        }
+
+        .container {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: azure;
+            padding: 10px;
+        }
+
+        .header-form {
+            width: 140px;
+        }
+        
+        .header{
+            font-size: 30px;
+            text-align: center;
+        }
+
+
+        .flex {
+            display: flex;
+        }
+        .form-input {
+            margin-bottom: 5px;
+        }
+
+        input.form, textarea {
+            border: 1px gainsboro solid;
+            width: 100%;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .button {
+            border: 0;
+            width: 100%;
+            height: 40px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"> 
+            Register form 
+        </div>
+        <div class="flex form-input" >
+            <div class="header-form"> Name </div>
+            <input class="form" type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form"> Lastname </div>
+            <input class="form" type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form"> Age </div>
+            <input class="form" type="number" min="0" max="100">
+        </div>
+         <div class="flex gender form-input">
+            <div class="header-form"> Gender </div>
+            <div>
+                <input name="gender" type="radio"> Man
+                <input name="gender" type="radio"> Woman
+                <input name="gender" type="radio"> Not define
+            </div>
+         </div>
+         <div class="form-input">
+            Interest
+            <div>
+                <input name="interest" type="checkbox"> Book
+            </div>
+            <div>
+                <input name="interest" type="checkbox"> Games
+            </div>
+            <div>
+                <input name="interest" type="checkbox"> Cartoon
+            </div>
+         </div>
+         <div class="form-input">
+            Information
+            <div>
+                <textarea name="eiei" id="eiei"></textarea>
+            </div>
+         </div>
+         <div class="form-input center">
+            <a href="https://shopee.com"> T&C </a>
+         </div>
+         <div class="form-input center">
+            <button class="button"> Submit </button>
+            <input class="button" type="submit" value="Reject">
+         </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header"> 
+            Register form 
+        </div>
+        <div class="flex form-input" >
+            <div class="header-form"> Name </div>
+            <input class="form" name="firstname" type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form"> Lastname </div>
+            <input class="form" name="lastname" type="text">
+        </div>
+        <div class="flex form-input">
+            <div class="header-form"> Age </div>
+            <input class="form" name="age" type="number" min="0" max="100">
+        </div>
+         <div class="flex gender form-input">
+            <div class="header-form"> Gender </div>
+            <div>
+                <input name="gender" type="radio" value="Man"> Man
+                <input name="gender" type="radio" value="Woman"> Woman
+                <input name="gender" type="radio" value="Not define"> Not define
+            </div>
+         </div>
+         <div class="form-input">
+            Interest
+            <div>
+                <input name="interest" type="checkbox" value="Book"> Book
+            </div>
+            <div>
+                <input name="interest" type="checkbox" value="Games"> Games
+            </div>
+            <div>
+                <input name="interest" type="checkbox" value="Cartoon"> Cartoon
+            </div>
+         </div>
+         <div class="form-input">
+            Information
+            <div>
+                <textarea name="description" id="eiei"></textarea>
+            </div>
+         </div>
+         <div class="form-input center">
+            <a href="https://shopee.com"> T&C </a>
+         </div>
+         <div class="form-input center">
+            <button onclick="submitData()" class="button"> Submit </button>
+            <input class="button" type="submit" value="Reject">
+         </div>
+    </div>
+    <script src="index.js"> </script>
+</body>
+</html>

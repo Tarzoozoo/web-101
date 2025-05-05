@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2. HTML ส่ง event ไปยัง Javascript -->
+    <!-- Onclick -->
+    <button onclick="userClicked()">Click here</button>
+    <div onclick="userClicked()">Please click</div>
+
+    <!-- Onchange -->
+    <input type="radio" name="gender" value="Man" onchange="changeGender()"> Man
+    <input type="radio" name="gender" value="Woman" onchange="changeGender()"> Woman
+    <input type="radio" name="gender" value="Other" onchange="changeGender()"> Other
+    
+    <!-- Onkey -->
+    <div>
+        Surname <input type="text" name="surname" onkeydown="changeSurname()">
+    </div>
+
+    <!-- Onmouse -->
+    <div 
+    onmouseover="overItem()"
+    onmousedown="downItem()"
+    onmouseup="upItem()">Please click 2</div>
+
+    <script>
+        function userClicked() {
+            console.log('button clicked')
+        }
+
+        function changeGender() {
+            console.log("Change gender")
+            let genderInput = document.querySelectorAll("input[name=gender]")
+            for (let i = 0; i<genderInput.length; i++) {
+                if (genderInput[i].checked) {
+                    console.log("Gender: ", genderInput[i].value)
+                }
+            }
+        }
+
+        function changeSurname() {
+            // จิ้มไปยัง input surname
+            let firstnameDOM = document.querySelector("input[name=surname]")
+            // เอา value ของ surname ออกมา
+            console.log('changeSurname: ', firstnameDOM.value)
+        }
+
+        function overItem () {
+            console.log('mouseOver')
+        }
+        function downItem () {
+            console.log('downItem')
+        }
+        function upItem () {
+            console.log('upItem')
+        }
+    </script>
+</body>
+</html>

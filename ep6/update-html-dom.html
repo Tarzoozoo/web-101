@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Update HTML DOM -->
+    <div id="hello"> 
+        Hello <span style="display: none;"> Tar </span>
+    </div>
+
+    <h2> สิ่งที่ user สนใจ </h2>
+    <div id="content">
+        <!-- แสดงสิ่งที่ user สนใจออกมาโชว์บน Web -->
+    </div>
+    
+    <input type="checkbox" name="interest" value="Sport"> Sport
+    <input type="checkbox" name="interest" value="Games"> Games
+    <input type="checkbox" name="interest" value="Book"> Book
+    <input type="checkbox" name="interest" value="Gym"> Gym
+    <button onclick="submitInterest()"> Submit interest </button>
+
+    <!-- อ่าน/เขียน Attribute -->
+    <div>
+        <a id="thislink" href="https://google.com" target="_blank">Google</a>
+        Surname <input type="text" name="surname" value="test">
+    </div>
+     
+
+    <script>
+        // ดึง/อ่าน ข้อมูลจาก HTML
+       let helloDOM = document.getElementById("hello")
+       console.log(helloDOM.textContent)
+       console.log(helloDOM.innerText)
+       console.log(helloDOM.innerHTML)
+
+        // เขียน ข้อมูลจาก HTML
+        let helloDOM2 = document.getElementById("hello")
+        helloDOM2.textContent = "Hello EEEE "
+        console.log(helloDOM2.textContent)
+        console.log(helloDOM2.innerText)
+        console.log(helloDOM2.innerHTML)
+
+        helloDOM2.innerHTML = "Hello <b>EIEI</b>"
+        console.log(helloDOM2.textContent)
+        console.log(helloDOM2.innerText)
+        console.log(helloDOM2.innerHTML)
+        
+        // แสดงสิ่งที่ user สนใจออกมาโชว์บน Web 
+        function submitInterest () {
+            // เลือกไปยัง checkbox ทั้งหมด
+            let interestDOM = document.querySelectorAll("input[name=interest]")
+            let contentHTML = "<ul>"
+            // เอาค่า value ออกมาเฉพาะตัวที่เลือก
+            for (let i = 0; i<interestDOM.length; i++) {
+                if (interestDOM[i].checked) {
+                    console.log(interestDOM[i].value)
+                    contentHTML += "<li>" + interestDOM[i].value + "</li>"
+                }
+            }
+
+            // วนค่าจัวที่เลือก ใส่ html กลับไป
+            contentHTML += "</li>"
+            console.log(contentHTML)
+
+            // ใส่ HTML กลับเข้าไป
+            let contentDOM = document.getElementById("content")
+            contentDOM.innerHTML = contentHTML
+        }
+
+        // อ่าน/เขียน Attribute
+        let thislinkDOM = document.getElementById("thislink")
+        let thisinputDOM = document.querySelector('input[name=surname]')
+        console.log(thislinkDOM.getAttribute('href'))
+        console.log(thisinputDOM.value)
+        console.log(thisinputDOM.getAttribute('value'))
+
+        thislinkDOM.setAttribute('href', 'https://yahoo.com')
+    </script>
+</body>
+</html>

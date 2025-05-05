@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS */
+        /* 
+        1. แต่งใคร?(id, class, DOM[HTML element]) 
+        2. แต่งอะไร? */
+
+        /* CSS Text Styling */
+        @font-face {
+            font-family: 'kanit';
+            src: url('./Kanit/Kanit-Regular.ttf');
+        }
+        body {
+            /* Object => Key: Value */
+            background-color: whitesmoke;
+            font-family: 'kanit';
+        }
+
+        /* CSS Box model */
+        #register {
+            font-size: 30px;
+            color: yellowgreen;
+            font-weight: 800;
+            padding-top: 10px; /* ขยายในกล่อง */
+            padding-bottom: 10px;
+            margin-top: 10px; /* ขยายนอกกล่อง */
+            margin-bottom: 10px;
+            background-color: wheat;
+
+            padding-left: 20px;
+            border: 2px red solid;
+            
+            width: 50%;
+        }
+        .form {
+            border: 3px blue solid;
+        }
+        .header-form {
+            font-weight: 900;
+        }
+
+        /* CSS Layout */
+        /* block, inline, inline-block, flex, grid */
+        .gender {
+            /* Flex จะใช้จัด layout ที่อยู่ในแถวเดียวกัน */
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+        }
+        .item-left {
+            background-color: red;
+            flex: 1;
+        }
+        .item-right {
+            background-color: blue;
+            flex: 2;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .item-1, .item-3 {
+            background-color: blue;
+        }
+
+        /* CSS Position */
+        .relative {
+            position: relative; /* เทียบกับตัวมันเอง */
+            left: 20px; /* top, bottom, right, left */
+        }
+        .absolute {
+            position: absolute; /* เทียบกับทั้งหน้าจอ */
+            top: 0;
+            right: 0;
+        }
+        .fixed {
+            position: fixed; /* เทียบกับทั้งหน้าจอ เลื่อนตามหน้าจอ*/
+            top: 0;
+            right: 0;
+        }
+        .sticky {
+            position: sticky; /* relative ตอนเริ่ม fixed ตอนเลื่อน*/
+            top: 50px;
+        }
+
+        /* CSS float wrap text */
+        .float-right {
+            float: right;
+        }
+        .float-left {
+            float: left;
+        }
+
+        /* CSS image */
+        .image {
+            background-image: url(
+                "https://fastly.picsum.photos/id/50/200/200.jpg?hmac=Tz-5Oumk5gfW4P4hAiYNsHDjmBVhOzedd8gy4aEsumY"
+            );
+            height: 200px;
+            width: 100px;
+            background-size: cover;
+            background-position: top right;
+            background-repeat: no-repeat;
+        }
+
+        /* CSS Unit */
+        .box {
+            background-color: black;
+            height: 20px;
+            width: 50vw; /* vh, vw โชว์กี่ % ของขนาดจอที่เปิดอยู่*/
+            /* em = relative ตามขนาดฟ้อนของ div แม่ */
+            /* rem = ขนาดตาม default ของ HTML 1rem = 16px */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item-left"> Left </div>
+        <div class="item-right"> Right </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item item-1"> Item 1 </div>
+        <div class="grid-item item-2"> Item 2 </div>
+        <div class="grid-item item-3"> Item 3 </div>
+        <div class="grid-item item-4"> Item 4 </div>
+    </div>
+
+    <div class="position-container">
+        <div class="static"> Static </div> <!-- ทุกอันคือ static -->
+        <div class="relative"> Relative </div>
+        <div class="absolute"> Absolute </div>
+        <div class="fixed"> Fixed </div>
+        <div class="sticky"> Sticky </div>
+    </div>
+
+    <div class="float-right">
+        f-right
+    </div>
+    <div class="float-left">
+        <img src="https://fastly.picsum.photos/id/50/200/200.jpg?hmac=Tz-5Oumk5gfW4P4hAiYNsHDjmBVhOzedd8gy4aEsumY" alt="">
+    </div>
+    <div>
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    </div>
+    <div style="clear: both;"></div>
+
+    <div class="image"></div>
+
+    <div class="box"></div>
+
+    <!-- Start -->
+    <div id="register"> 
+        Register form 
+    </div>
+     <span class="header-form"> Name </span>
+     <input class="form" type="text">
+     <span class="header-form"> Lastname </span>
+     <input class="form" type="text"> <br>
+     Age <input type="number" min="0" max="100">
+     <div class="gender">
+        Gender
+        <div>
+            <input name="gender" type="radio"> Man
+        </div>
+        <div>
+            <input name="gender" type="radio"> Woman
+        </div>
+        <div>
+            <input name="gender" type="radio"> Not define
+        </div>
+     </div>
+     <div>
+        Interest
+        <div>
+            <input name="interest" type="checkbox"> Book
+        </div>
+        <div>
+            <input name="interest" type="checkbox"> Games
+        </div>
+        <div>
+            <input name="interest" type="checkbox"> Cartoon
+        </div>
+     </div>
+     <div>
+        Information
+        <div>
+            <textarea name="eiei" id="eiei"></textarea>
+        </div>
+     </div>
+     <button> Submit </button>
+     <input type="submit" value="Submit">
+</body>
+</html>
