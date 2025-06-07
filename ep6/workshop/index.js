@@ -1,4 +1,4 @@
-function submitData () {
+const submitData = async () => {
     let firstNameDOM = document.querySelector('input[name=firstname]')
     let lastNameDOM = document.querySelector('input[name=lastname]')
     let ageDOM = document.querySelector('input[name=age]')
@@ -12,7 +12,7 @@ function submitData () {
     let interest = ''
     for (let i = 0; i < interestDOM.length; i++) {
         interest += interestDOM[i].value
-        if (i != interestDOMs.length - 1) {
+        if (i != interestDOM.length - 1) {
             interest += ', '
           }
     }
@@ -22,8 +22,13 @@ function submitData () {
         age: ageDOM.value,
         gender: genderDOM.value,
         description: desDOM.value,
-        interest: interest
+        interests: interest
     }
-    console.log("submitData")
-    console.log(userData)
+    console.log('submit data', userData)
+    const resp = await axios.post(
+        'http://localhost:8000/user', 
+        userData
+    )
+
+    console.log('resp data', resp.data)
 }
